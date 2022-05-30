@@ -8,6 +8,7 @@ function sumZero(arr){
     else if (sum > 0) right--;
     else left++;
   }
+  
 }
 
 console.log(sumZero([-4,-3,-2,-1,0,1,2,3,10])) // [3,3]

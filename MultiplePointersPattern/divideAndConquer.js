@@ -4,11 +4,10 @@ function search(array, val) {
 
   while (min <= max) {
     let middle = Math.floor((min + max) / 2);
-    console.log(middle)
+    
     if (array[middle] < val) min = middle + 1;
     else if (array[middle] > val) max = middle - 1;
     else return middle;
-
   }
 
   return -1;
