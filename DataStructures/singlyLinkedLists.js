@@ -150,14 +150,11 @@ list.push(":)")
 list.set(2,"!!!")
 list.insert(3,":D")
 list.remove(2)
-list.print();
+list.print(); // [ 'Hello', 'Goodbye', ':D', '<3', ':)' ]
 list.reverse();
-list.print();
+list.print(); // [ ':)', '<3', ':D', 'Goodbye', 'Hello' ]
 
 
-// let first = new Node("Hi")
-// first.next = new Node ("there")
-// first.next.next = new Node ("how")
-// first.next.next.next = new Node ("are")
-// first.next.next.next.next = new Node ("you")
+
+
 
