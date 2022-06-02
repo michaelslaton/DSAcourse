@@ -26,13 +26,6 @@ class SinglyLinkedList{
     return this;
   }
 
-  // traverse(){
-  //   let current = this.head;
-  //   while(current){
-  //     current = current.next;
-  //   }
-  // }
-
   pop(){
     if(!this.head) return undefined;
     let current = this.head;
