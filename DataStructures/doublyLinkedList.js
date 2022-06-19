@@ -1,8 +1,3 @@
-// Node
-// -val
-// -next
-// -prev
-
 class Node {
   constructor(val) {
     this.val = val;
@@ -10,11 +5,6 @@ class Node {
     this.prev = null;
   }
 }
-
-// DoublyLinkedList
-// -head
-// -tail
-// -length
 
 class DoublyLinkedList {
   constructor() {

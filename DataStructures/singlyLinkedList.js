@@ -152,6 +152,6 @@ list.push(":)");
 list.set(2,"!!!");
 list.insert(3,":D");
 list.remove(2);
-list.print(); // [ 'Hello', 'Goodbye', ':D', '<3', ':)' ]
+list.print();   // [ 'Hello', 'Goodbye', ':D', '<3', ':)' ]
 list.reverse();
-list.print(); // [ ':)', '<3', ':D', 'Goodbye', 'Hello' ]
+list.print();   // [ ':)', '<3', ':D', 'Goodbye', 'Hello' ]
