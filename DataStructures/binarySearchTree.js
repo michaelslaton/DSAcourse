@@ -1,3 +1,11 @@
+function spacer(){
+  console.log(' ')
+  console.log('-------------------------------------------------------------------')
+  console.log(' ')
+}
+
+// Tree Code Below
+
 class Node {
   constructor(value){
     this.value = value;
@@ -118,7 +126,10 @@ tree.insert(30);
 tree.insert(5);
 tree.insert(6);
 tree.insert(1);
-console.log(tree);
+
+spacer(); // ------------------------------------------
+
+console.log('Tree Root: ', tree);
 // BST {
 //   root: Node {
 //     value: 22,
@@ -126,7 +137,9 @@ console.log(tree);
 //     right: Node { value: 30, left: null, right: null }
 //   }
 // }
-console.log(tree.root.left);
+spacer(); // ------------------------------------------
+
+console.log('Tree Left Branch: ', tree.root.left);
 // Node {
 //   value: 10,
 //   left: Node {
@@ -136,18 +149,22 @@ console.log(tree.root.left);
 //   },
 //   right: null
 // }
-console.log(tree.root.right);
+spacer(); // ------------------------------------------
+
+console.log('Tree Right Branch: ', tree.root.right);
 // Node { 
 //   value: 30, 
 //   left: null, 
 //   right: null 
 // }
+
 tree.find(30)
 // Node { 
 //   value: 30, 
 //   left: null, 
 //   right: null 
 // }
+
 tree.find(5)
 // Node {
 //   value: 5,
@@ -155,13 +172,7 @@ tree.find(5)
 //   right: Node { value: 6, left: null, right: null }
 // }
 
-function spacer(){
-  console.log(' ')
-  console.log('-------------------------------------------------------------------')
-  console.log(' ')
-}
-
-spacer();
+spacer(); // ------------------------------------------
 
 let tree2 = new BST();
 tree2.insert(10);
