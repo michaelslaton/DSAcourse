@@ -83,6 +83,32 @@ class BST {
     helper(this.root);
     return data;
   }
+
+  DFSpostorder(){
+    let data = [];
+
+    function helper(node) {
+      if (node.left) helper(node.left);
+      if (node.right) helper(node.right);
+      return data.push(node.value);
+    }
+
+    helper(this.root);
+    return data;
+  }
+
+  DFSinorder(){
+    let data = [];
+
+    function helper(node) {
+      if (node.left) helper(node.left);
+      data.push(node.value);
+      if (node.right) helper(node.right);
+    }
+
+    helper(this.root);
+    return data;
+  }
 }
 
 const tree = new BST();
@@ -149,5 +175,7 @@ tree2.insert(3);
 //   6      15
 // 3   8       20
 
-console.log(tree2.BFS()); // [ 10, 6, 15, 3, 8, 20 ]
-console.log(tree2.DFSpreorder()); // [ 10, 6, 3, 8, 15, 20 ]
+console.log('Breadth First Search: ', tree2.BFS()); //    [ 10, 6, 15, 3, 8, 20 ]
+console.log('DFS Pre Order: ', tree2.DFSpreorder()); //   [ 10, 6, 3, 8, 15, 20 ]
+console.log('DFS Post Order: ', tree2.DFSpostorder()); // [ 3, 8, 6, 20, 15, 10 ]
+console.log('DFS In Order: ', tree2.DFSinorder()); //     [ 3, 6, 8, 10, 15, 20 ]
