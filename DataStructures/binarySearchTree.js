@@ -39,21 +39,50 @@ class BST {
     }
   }
 
-  find(value){
-    if(!this.root) return null;
+  find(value) {
+    if (!this.root) return null;
     let current = this.root;
-    while(true){
-      if(value === current.value) return current;
-      if(value < current.value){
-        if(current.left) current = current.left;
+    while (true) {
+      if (value === current.value) return current;
+      if (value < current.value) {
+        if (current.left) current = current.left;
         else return null;
       } else {
-        if(current.right) current = current.right;
+        if (current.right) current = current.right;
         else return null;
       }
     }
   }
 
+  BFS() {
+    let queue = [];
+    let data = [];
+    let node = this.root;
+    queue.push(node);
+
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+
+    return data;
+  }
+
+  DFSpreorder() {
+    let data = [];
+
+    function helper(node) {
+      data.push(node.value);
+      if (node.left) helper(node.left);
+      if (node.right) helper(node.right);
+      return;
+    }
+
+    helper(this.root);
+    return data;
+  }
 }
 
 const tree = new BST();
@@ -87,15 +116,38 @@ console.log(tree.root.right);
 //   left: null, 
 //   right: null 
 // }
-console.log(tree.find(30))
+tree.find(30)
 // Node { 
 //   value: 30, 
 //   left: null, 
 //   right: null 
 // }
-console.log(tree.find(5))
+tree.find(5)
 // Node {
 //   value: 5,
 //   left: Node { value: 1, left: null, right: null },
 //   right: Node { value: 6, left: null, right: null }
 // }
+
+function spacer(){
+  console.log(' ')
+  console.log('-------------------------------------------------------------------')
+  console.log(' ')
+}
+
+spacer();
+
+let tree2 = new BST();
+tree2.insert(10);
+tree2.insert(6);
+tree2.insert(8);
+tree2.insert(15);
+tree2.insert(20);
+tree2.insert(3);
+
+//      10
+//   6      15
+// 3   8       20
+
+console.log(tree2.BFS()); // [ 10, 6, 15, 3, 8, 20 ]
+console.log(tree2.DFSpreorder()); // [ 10, 6, 3, 8, 15, 20 ]
